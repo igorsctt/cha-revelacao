@@ -598,6 +598,15 @@ body::after {
     animation: fadeInUp 1.4s ease;
 }
 
+.presence-message {
+    font-size: 1.8em;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: pulse 2s ease infinite;
+    text-shadow: 1px 1px 3px rgba(102, 126, 234, 0.3);
+}
+
 .whatsapp-button {
     display: inline-flex;
     align-items: center;
@@ -849,6 +858,11 @@ body::after {
     .whatsapp-button {
         font-size: 1em;
         padding: 12px 20px;
+    }
+
+    .presence-message {
+        font-size: 1.3em;
+        margin-bottom: 15px;
     }
 }
 
