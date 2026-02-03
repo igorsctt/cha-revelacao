@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá Revelação - É Menino ou Menina?</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Tela splash com presente -->
+    <div class="gift-splash" id="giftSplash">
+        <div class="gift-content">
+            <h1 class="gift-title">Uma surpresa especial!</h1>
+            <p class="gift-subtitle">Clique no presente para descobrir</p>
+            
+            <div class="question-marks" id="questionMarks">
+                <span class="question">?</span>
+                <span class="question">?</span>
+                <span class="question">?</span>
+                <span class="question">?</span>
+                <span class="question">?</span>
+                <span class="question">?</span>
+                <span class="question">?</span>
+                <span class="question">?</span>
+            </div>
+            
+            <div class="gift-box" id="giftBox">
+                <div class="gift-lid">
+                    <div class="gift-bow"></div>
+                </div>
+                <div class="gift-body"></div>
+            </div>
+            
+            <p class="gift-hint">✨ Clique no presente ✨</p>
+        </div>
+    </div>
+
+    <!-- Controle de áudio -->
+    <div class="audio-control" id="audioControl">
+        <button class="audio-button" id="audioButton">
+            <svg class="icon play-icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="icon pause-icon hidden" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Botão de voltar -->
+    <div class="back-button-container">
+        <a href="index.html" class="back-button" title="Voltar para o início">
+            <svg viewBox="0 0 24 24" class="back-icon">
+                <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </a>
+    </div>
+
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="assets/audio/Zé-Felipe-José-Ou-Maria-_Videoclipe-Oficial_.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container" id="mainContent" style="display: none;">
+        <div class="header">
+            <h1>🎉 Chá Revelação Bilala 🎉</h1>
+            <p class="subtitle">Estamos esperando um bebê!</p>
+        </div>
+
+        <div class="reveal-section" id="revealSection">
+            <h2>Será menino ou menina?</h2>
+            <p class="instruction">Clique nos balões para descobrir! 🎈</p>
+            
+            <div class="balloons">
+                <div class="balloon blue" data-gender="boy">
+                    <div class="balloon-shape"></div>
+                    <div class="balloon-string"></div>
+                    <span class="balloon-label">Menino</span>
+                </div>
+                <div class="balloon pink" data-gender="girl">
+                    <div class="balloon-shape"></div>
+                    <div class="balloon-string"></div>
+                    <span class="balloon-label">Menina</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="result hidden" id="result">
+            <div class="confetti"></div>
+            <h2 class="reveal-text" id="revealText"></h2>
+            <p class="baby-name" id="babyName"></p>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <h3>📅 Data e Horário</h3>
+                <p><strong>Dia 15/02 a partir das 15h</strong></p>
+            </div>
+
+            <div class="info-card">
+                <h3>📍 Local</h3>
+                <p><strong>Parque Ecológico</strong></p>
+                <p>Próximo ao chafariz</p>
+            </div>
+
+            <div class="info-card important">
+                <h3>⏰ Confirme sua Presença</h3>
+                <p><strong>Até dia 11/02</strong></p>
+            </div>
+
+            <div class="info-card">
+                <h3>🎁 O que levar</h3>
+                <p><strong>Um pacote de fralda P ou M</strong></p>
+                <p><strong>Um prato de doce ou salgado</strong></p>
+                <p><strong>Monte seu cooler e leve sua bebida</strong></p>
+            </div>
+        </div>
+
+        <div class="whatsapp-section">
+            <a href="https://wa.me/5519995393168?text=Olá!%20Confirmo%20minha%20presença%20no%20chá%20revelação!" 
+               class="whatsapp-button" 
+               id="whatsappButton"
+               target="_blank">
+                <svg viewBox="0 0 32 32" class="whatsapp-icon">
+                    <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.408-5.234-0.32-0.524c-1.331-2.176-2.030-4.651-2.030-7.22 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.227-0.403 0.254-0.749 0.080s-1.46-0.538-2.78-1.716c-1.030-0.919-1.726-2.053-1.927-2.4s-0.022-0.535 0.152-0.708c0.156-0.155 0.346-0.403 0.518-0.605s0.231-0.346 0.347-0.577c0.117-0.231 0.058-0.433-0.028-0.605s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.2-0.010-0.431-0.012-0.662-0.012s-0.604 0.086-0.92 0.433c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.172 0.231 2.4 3.708 5.867 5.164 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.662-0.099 2.049-0.835 2.335-1.642s0.288-1.501 0.201-1.642c-0.086-0.144-0.316-0.231-0.662-0.403z"></path>
+                </svg>
+                Confirmar Presença pelo WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>

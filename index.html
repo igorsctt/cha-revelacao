@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Jornada - Chá Revelação</title>
+    <link rel="stylesheet" href="styles/slideshow.css">
+</head>
+<body>
+    <!-- Tela de entrada/splash -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <h1 class="splash-title">Bem-vindo! 💕</h1>
+            <p class="splash-subtitle">Clique em um balão para começar nossa jornada</p>
+            
+            <div class="splash-balloons">
+                <div class="splash-balloon blue" data-color="blue">
+                    <div class="splash-balloon-shape"></div>
+                    <div class="splash-balloon-string"></div>
+                </div>
+                <div class="splash-balloon pink" data-color="pink">
+                    <div class="splash-balloon-shape"></div>
+                    <div class="splash-balloon-string"></div>
+                </div>
+            </div>
+            
+            <p class="splash-hint">✨ Clique em qualquer balão ✨</p>
+        </div>
+    </div>
+
+    <div class="slideshow-container" id="mainContent">
+        <!-- Controle de áudio -->
+        <div class="audio-control" id="audioControl">
+            <button class="audio-button" id="audioButton">
+                <svg class="icon play-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="icon pause-icon hidden" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+            </button>
+            <span class="audio-text">Clique para ouvir a música</span>
+        </div>
+
+        <audio id="backgroundMusic" loop>
+            <source src="assets/audio/Zé-Felipe-José-Ou-Maria-_Videoclipe-Oficial_.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Nossa Jornada até Aqui 💕</h1>
+            <p class="subtitle">Uma história de amor e expectativa</p>
+        </div>
+
+        <!-- Slideshow -->
+        <div class="slideshow">
+            <div class="slide active">
+                <img src="assets/img/01-ExameDeSangue.jpeg" alt="Exame de Sangue">
+                <div class="slide-caption">
+                    <span class="slide-number">1/9</span>
+                    <p class="slide-text">O início de tudo... Exame de Sangue<span>Data:10/11/25</span></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/02-fotoSozinha.jpeg" alt="Foto Sozinha">
+                <div class="slide-caption">
+                    <span class="slide-number">2/9</span>
+                    <p class="slide-text">Descobrindo a novidade</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/03-FotoComAna.jpeg" alt="Foto com Ana">
+                <div class="slide-caption">
+                    <span class="slide-number">3/9</span>
+                    <p class="slide-text">Compartilhando a alegria com quem amamos</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/05-fotoJuntas.jpeg" alt="Foto Juntas">
+                <div class="slide-caption">
+                    <span class="slide-number">4/9</span>
+                    <p class="slide-text">Momentos inesquecíveis</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/06-fotoBarriga.jpeg" alt="Foto da Barriga">
+                <div class="slide-caption">
+                    <span class="slide-number">5/9</span>
+                    <p class="slide-text">A barriguinha crescendo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/07-FotoPresente.jpeg" alt="Foto do Presente">
+                <div class="slide-caption">
+                    <span class="slide-number">6/9</span>
+                    <p class="slide-text">Presentes e amor</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/08-primeiroUltrassom.jpeg" alt="Primeiro Ultrassom">
+                <div class="slide-caption">
+                    <span class="slide-number">7/9</span>
+                    <p class="slide-text">Primeiro Ultrassom - Emoção Pura<span>Data:08/01/26</span></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/09-SegundoUltraSsom.jpeg" alt="Segundo Ultrassom">
+                <div class="slide-caption">
+                    <span class="slide-number">8/9</span>
+                    <p class="slide-text">Segundo Ultrassom<span>Data:31/01/26</span></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/img/10-SegundoUltrsoom.jpeg" alt="Mais um Ultrassom">
+                <div class="slide-caption">
+                    <span class="slide-number">9/9</span>
+                    <p class="slide-text">Acompanhando cada momento<span>Data:31/01/26</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de navegação -->
+        <div class="navigation">
+            <button class="nav-button prev" id="prevBtn">
+                <svg viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+
+            <div class="dots" id="dotsContainer"></div>
+
+            <button class="nav-button next" id="nextBtn">
+                <svg viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Botão para ir para revelação -->
+        <div class="reveal-button-container" id="revealButtonContainer">
+            <a href="revelacao.html" class="reveal-button">
+                <span>Descobrir o Sexo do Bebê 🎉</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script src="javascript/slideshow.js"></script>
+</body>
+</html>
