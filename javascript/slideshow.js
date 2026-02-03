@@ -214,8 +214,8 @@ function handleSwipe() {
             // Swipe right - slide anterior
             prevSlide();
         }
-        // Pausa temporariamente ao fazer swipe
-        pauseAutoplay();
+        // Pausa mais curta no mobile (4 segundos)
+        pauseAutoplay(4000);
     }
 }
 
@@ -258,15 +258,17 @@ nextBtn.addEventListener('click', () => {
     pauseAutoplay();
 });
 
-// Pausar ao passar o mouse sobre o slideshow
+// Pausar ao passar o mouse sobre o slideshow (apenas desktop)
 const slideshow = document.querySelector('.slideshow');
-slideshow.addEventListener('mouseenter', () => {
-    autoplayPaused = true;
-});
+if (window.innerWidth > 768) {
+    slideshow.addEventListener('mouseenter', () => {
+        autoplayPaused = true;
+    });
 
-slideshow.addEventListener('mouseleave', () => {
-    autoplayPaused = false;
-});
+    slideshow.addEventListener('mouseleave', () => {
+        autoplayPaused = false;
+    });
+}
 
 // Animação de entrada suave
 window.addEventListener('load', () => {

@@ -66,21 +66,21 @@ body::after {
     font-size: 3.5em;
     color: white;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     animation: pulse 2s ease infinite;
 }
 
 .gift-subtitle {
     font-size: 1.8em;
     color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .question-marks {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -724,40 +724,72 @@ body::after {
 /* Responsividade */
 @media (max-width: 768px) {
     .gift-title {
-        font-size: 2.5em;
+        font-size: 2em;
+        margin-bottom: 10px;
     }
 
     .gift-subtitle {
-        font-size: 1.3em;
-        padding: 0 20px;
+        font-size: 1.1em;
+        padding: 30px;
+        margin-bottom: 30px;
     }
 
     .question-marks {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 
     .question {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .gift-box {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .gift-body {
-        width: 150px;
-        height: 110px;
+        width: 120px;
+        height: 90px;
+    }
+
+    .gift-body::before {
+        width: 20px;
+    }
+
+    .gift-body::after {
+        height: 20px;
     }
 
     .gift-lid {
-        width: 170px;
-        height: 40px;
+        width: 135px;
+        height: 35px;
+    }
+
+    .gift-bow {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 40px solid #ffd93d;
+        top: -28px;
+    }
+
+    .gift-bow::before,
+    .gift-bow::after {
+        width: 45px;
+        height: 30px;
+    }
+
+    .gift-bow::before {
+        left: -55px;
+    }
+
+    .gift-bow::after {
+        right: -55px;
     }
 
     .gift-hint {
-        font-size: 1.2em;
+        font-size: 1em;
+        margin-top: 30px;
     }
 
     .audio-control {
